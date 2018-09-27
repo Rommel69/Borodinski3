@@ -1,0 +1,662 @@
+
+/* 
+    Created on : Sep 3, 2018, 2:10:16 AM
+    Author     : Predator
+*/
+
+
+#userPic {
+    color: white;
+}
+
+label  {
+    color: white;
+}
+
+.apply-section {
+    width: 320px;
+    background-color: #f8f5f2;
+    display: flex;
+    margin: 0 auto;
+    height: 1671px;
+}
+
+.form-top {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: none;
+    margin: 0;
+    padding: 0;
+    min-height: 560px;
+}
+
+.title-top {
+    font-size: 30px;
+    line-height: 30px;
+    margin: 0 auto;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    color: white;
+}
+
+.form-field {
+    width: 260px;
+    height: 48px;
+    border: 1px solid #e5ddd5;
+    padding-left: 18px;
+    margin-bottom: 6px;
+}
+
+.form-field:nth-child(5) {
+    margin-bottom: 26px;
+}
+
+.form-field:nth-child(7) {
+    margin-bottom: 26px;
+}
+
+.textarea {
+    width: 260px;
+    height: 110px;
+    border: 1px solid #e5ddd5;
+    margin: 0;
+    padding: 0;
+    padding-left: 18px;
+}
+
+.form-button-toindex {
+    display: none;
+}
+
+.form-mid {
+    display: flex;
+    flex-direction: row;
+    border: none;
+    margin: 0;
+    padding: 0;
+    min-height: 510px;
+    flex-wrap: wrap;
+}
+
+.title-middle {
+    margin: 0 auto;
+    margin-bottom: 100px;
+    margin-top: 10px;
+    font-size: 20px;
+    line-height: 27px;
+}
+
+.beard-radio {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    text-transform: lowercase;
+    margin-left: 35px;
+    align-items: center;
+}
+
+ .form-field:hover{
+        border-color: #d5c9bd;
+}
+    
+ .form-field:focus{
+        border-color: #999999;
+}
+
+.textarea:hover {
+    border-color: #d5c9bd;
+}
+
+.textarea:focus {
+    border-color: #999999;
+}
+
+.beard-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark-radio {
+    position: absolute;
+    top: -55px;
+    left: 0px;
+    height: 48px;
+    width: 48px;
+    border: 1px solid #ebe4de;
+    background-color: white;
+    border-radius: 50%;
+}
+ 
+#polarfix {
+    margin-left: 5px;
+}
+.radio-container {
+    display: flex;
+    position: relative;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.checkmark-radio:hover {
+    border-color: #dad0c5;
+}
+
+/* On mouse-over, add a grey background color */
+label:hover input ~ .checkmark-radio:focus {
+  
+}
+
+/* When the radio button is checked, add a blue background */
+label input:checked ~ .checkmark-radio {
+  background-color: white;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark-radio:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+label input:checked ~ .checkmark-radio:after {
+  display: flex;
+}
+
+/* Style the indicator (dot/circle) */
+label .checkmark-radio:after {
+  top: 14px;
+  left: 14px;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #e5ded6;
+  border-radius: 50%;
+  background: white;
+}
+
+.form-bot {
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    margin: 0 auto;
+    
+}
+
+.title-bot {
+    font-size: 20px;
+    line-height: 27px;
+    margin: 0 auto;
+    margin-bottom: 38px;
+}
+
+
+ /* Customize the label (the container) */
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 60px;
+  margin-bottom: 37px;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 30px;
+  text-transform: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark-checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 35px;
+  width: 35px;
+  border: 1px solid #e5ddd5;
+  background-color: white;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark-checkbox {
+  border-color: #d5c9bd;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark-checkbox {
+  background-color: white;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark-checkbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark-checkbox:after {
+  display: flex;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark-checkbox:after {
+  left: 14px;
+  top: 3px;
+  width: 7px;
+  height: 18px;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+} 
+
+
+.submit-button {
+   padding: 0;
+   margin: 0 auto;
+   width: 280px;
+   height: 50px;
+   display: flex;
+   background-color: #826550;
+   color: white;
+   text-transform: uppercase;
+   cursor: pointer;
+   border: none;
+   margin-top: 10px;
+   margin-bottom: 40px;
+}
+
+.submit-button:hover {
+    background-color: #6a4d38;
+}
+
+.form-tablet-mock {
+    display: none;
+}
+
+.form-field-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-desktop-mock {
+    display: none;
+}
+
+.form-field-containerCon {
+	display: flex;
+	flex-direction: column;
+        width: 281px;
+}
+
+.pop-fail {
+    display: none;
+    width: 320px;
+    height: 320px;
+    position: absolute;
+    background-color: white;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    bottom: -1110px;
+    z-index: 3;
+    box-shadow: 13px 47px 97px 12px black;
+}
+
+.pop-title {
+    font-size: 40px;
+    line-height: 30px;
+}
+
+.pop-text {
+    margin: 0;
+    text-align: center;
+    font-size: 18px;
+    line-height: 27px;
+    text-transform: none;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 20px;
+    margin-bottom: 37px;
+}
+
+.pop-close {
+    border: none;
+    background-color: #826550;
+    width: 180px;
+    height: 50px;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.pop-close:hover {
+    background-color: #6a4d38;
+}
+
+.pop-succ {
+    display: none;
+    width: 320px;
+    height: 320px;
+    position: absolute;
+    background-color: white;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    bottom: -1110px;
+    z-index: 3;
+    box-shadow: 13px 47px 97px 12px black;
+}
+
+.pop-succ .pop-text {
+    margin-left: 57px;
+    margin-right: 54px;
+}
+
+
+@media (min-width: 768px) {
+    
+    .form-field-containerCon {
+	
+        width: auto;
+    }
+    
+    #userPic {
+    color: black;
+    }
+
+    label  {
+    color: black;
+    }
+
+    
+    .apply-form {
+        flex-basis: 640px;
+    }
+    
+    .reviews-mock {
+        display: none;
+    }
+    
+   .apply-section {
+	width: 640px;
+	margin: 0 auto;
+        height: 1400px;
+    }
+    
+    main {
+        background-color: #f8f5f2;
+    }
+    
+    .form-button-toindex {
+        display: flex;
+    }
+    
+    
+    
+    .main-header-logo {
+        height: 231px;
+        background-image: url(../images/back-tablet@1x.svg);
+    } 
+    
+    .main-header-logo .form-tablet-mock {
+        width: 768px;
+        height: 50px;
+    }
+    
+    .title-top {
+        margin: 0;
+        font-size: 40px;
+        line-height: 30px;
+        align-self: center;
+        color: black;
+    }
+    
+    .form-button-toindex {
+        width: 158px;
+        height: 48px;
+        border: 1px solid #e5ddd5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        text-decoration: none;
+        align-self: end;
+    }
+    
+    .form-button-toindex:hover {
+        border-color: #d5c9bd;
+    }
+    
+    .form-button-toindex:active {
+        background-color: #d5c9bd;
+        opacity: 0.5;
+    }
+    
+    .top-title-wrap {
+	width: 640px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+        margin-top: 65px;
+        margin-bottom: 78px;
+    }
+    
+    .form-field-container {
+        flex-direction: row;
+    }
+    
+    .form-field-container .form-field {
+        width: 193px;
+        
+    }
+    
+    .form-field {
+        width: 620px;
+        margin-bottom: 33px;
+    }
+    
+    .textarea {
+        width: 620px;
+    }
+    
+    .form-mid {
+        border-top: 1px solid #e5ddd5;
+        border-bottom: 1px solid #e5ddd5;
+        justify-content: space-between;
+        min-height: 375px;
+    }
+    
+    .title-middle {
+        position: relative;
+        background-color: #f8f5f2;
+        top: 43px;
+        z-index: 3;
+        font-size: 30px;
+        line-height: 30px;
+        width: 385px;
+        text-align: center;
+    }
+    
+    .beard-radio {
+        margin-top: 50px;
+        margin-left: 0;
+    }
+    
+    .title-bot {
+        position: relative;
+        background-color: #f8f5f2;
+        top: -19px;
+        z-index: 3;
+        font-size: 30px;
+        line-height: 30px;
+        width: 385px;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    
+    .form-bot {
+        width: 640px;
+        height: 343px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    
+    .checkbox-container {
+        height: 37px;
+    }
+    
+    .form-checkbox-container {
+        display: flex;
+        width: 320px;
+        flex-direction: column;
+        margin-top: 54px;
+    }
+    
+    .submit-button {
+        width: 640px;
+    }
+    
+    .modal-window {
+        
+        left: 50%;
+        top: 150px;
+    }
+    
+    .pop-succ {
+        width: 460px;
+        left: 31%;
+        bottom: -731px;
+    }
+    
+    .pop-fail {
+        left: 31%;
+        bottom: -731px;
+    }
+    
+    .pop-succ .pop-text {
+        margin-left: 125px;
+        margin-right: 122px;
+    }
+}
+
+@media(min-width:1200px) {
+    .main-header-logo {
+        height: 333px;
+        background-image: url(../images/back-desktop.svg);
+    }
+    
+    .apply-section {
+        width: 960px;
+    }
+    
+    .main-header-logo .form-tablet-mock {
+        display: none;
+    }
+    
+    .form-top {
+        width: 960px;
+    }
+    
+    .main-header-logo .form-desktop-mock {
+        width: 1200px;
+        height: 66px;
+    }
+    
+    .top-title-wrap {
+        width: 960px;
+    }
+    
+    .form-field-container .form-field {
+        width: 274px;
+        height: 68px;
+    }
+    
+    .form-field-container {
+        width: 960px;
+        justify-content: space-between;
+    }
+    
+    .form-field-containerCon {
+        flex-direction: row;
+        width: 960px;
+        justify-content: space-between;
+    }
+    
+    .form-field-containerCon .form-field {
+        width: 442px;
+        height: 68px;
+    }
+    
+    .textarea {
+        width: 940px;
+        height: 210px;
+    }
+    
+    .form-bot {
+        flex-direction: column;
+        width: 960px;
+    }
+    
+    .form-checkbox-container {
+        flex-direction: row;
+        width: 960px;
+        justify-content: space-around;
+        
+    }
+    
+    .checkbox-container {
+        margin: 0;
+       
+    }
+    
+    .form-mid {
+        width: 960px;
+    }
+    
+    
+    #beardFix1 {
+        position: relative;
+        left: 16px;
+    }
+    
+    #beardFix2 {
+        position: relative;
+        left: 21px;
+    }
+    
+    .submit-button {
+        width: 960px;
+        margin-top: -60px;
+    }
+    
+    .footer-adress .social-container {
+        margin-right: 170px;
+    }
+    
+    .modal-window {
+        top: 150px;
+        left: 35%;
+    }
+}
+
