@@ -2,7 +2,7 @@
 
 ?>
 
-
+</main>
         <footer class="main-page-footer">
             <section class="footer-adress">
                 

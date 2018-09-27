@@ -3,11 +3,21 @@
 <?php 
 session_start();
 $name = $_SESSION['user_name'];
-$active_item = ""; ?>
+ ?>
 
   <?php
-      if($_REQUEST['home'])
-      {$active_item = "list-site-item-active";}
+      if(isset($_GET['home']))
+      {$active_item1 = "list-site-item-active";}
+      if(isset($_GET['order']))
+      {$active_item2 = "list-site-item-active";}
+      if(isset($_GET['signup']))
+      {$active_item3 = "list-site-item-active";}
+      if(isset($_GET['cart']))
+      {$active_item4 = "list-site-item-active";}
+      if(isset($_GET['shop']))
+      {$active_item5 = "list-site-item-active";}
+      if(isset($_GET['user_profile']))
+      {$active_item6 = "list-site-item-active";}
       else {$active_item = " ";}
     ?>
 
@@ -20,13 +30,13 @@ $active_item = ""; ?>
                 <div class="main-nav-wrapper">
                     <ul class="main-nav-list site-list">
                        
-                        <li class="list-site-item  <?php echo $active_item; ?>"><a href="?home">Главная</a></li>
+                        <li class="list-site-item  <?php echo $active_item1; ?>"><a href="?home">Главная</a></li>
                        
-                        <li class="list-site-item"><a href="index.php?order">Записаться</a></li>
+                        <li class="list-site-item <?php echo $active_item2; ?>"><a href="index.php?order">Записаться</a></li>
                         <li class="list-site-item"><a href="#contacts">Контакты        </a></li>
-                        <li class="list-site-item"><a href="index.php?shop">Магазин    </a></li>
-                        <li class="list-site-item"><a href="index.php?signup">Регистрация            </a></li>
-                        <li class="list-site-item"><a href="index.php?cart">Корзина </a></li>
+                        <li class="list-site-item <?php echo $active_item5; ?>"><a href="index.php?shop">Магазин    </a></li>
+                        <li class="list-site-item <?php echo $active_item3; ?>"><a href="index.php?signup">Регистрация            </a></li>
+                        <li class="list-site-item <?php echo $active_item4; ?>"><a href="index.php?cart">Корзина </a></li>
                         
                     </ul>
                     
@@ -99,20 +109,20 @@ $active_item = ""; ?>
 
 <?php } ?>
        <?php
-    if(isset($_SESSION['user_name']) && $_SESSION['user_group'] != '1') {
-       echo <<<_EOD
+    if(isset($_SESSION['user_name']) && $_SESSION['user_group'] != '1') { ?>
+       
          <nav class="main-nav main-nav-closed main-nav-nojs">
                <button class="main-nav-toggle" type="button">
                    <span class="visually-hidden">Открыть меню</span>
                </button>
                 <div class="main-nav-wrapper">
                     <ul class="main-nav-list site-list">
-                        <li class="list-site-item list-site-item-active"><a>Главная</a></li>
-                        <li class="list-site-item"><a href="index.php?order">Записаться</a></li>
-                        <li class="list-site-item"><a href="#contacts">Контакты            </a></li>
-                        <li class="list-site-item"><a href="index.php?shop">Магазин            </a></li>
-                        <li class="list-site-item"><a href="index.php?user_profile">Профиль</a></li>
-                        <li class="list-site-item"><a href="index.php?cart">Корзина </a></li>
+                        <li class="list-site-item <?php echo $active_item1; ?>"><a href="?home">Главная</a></li>
+                        <li class="list-site-item <?php echo $active_item2; ?>"><a href="index.php?order">Записаться</a></li>
+                        <li class="list-site-item "><a href="#contacts">Контакты            </a></li>
+                        <li class="list-site-item <?php echo $active_item5; ?>"><a href="index.php?shop">Магазин            </a></li>
+                        <li class="list-site-item <?php echo $active_item6; ?>"><a href="index.php?user_profile">Профиль</a></li>
+                        <li class="list-site-item <?php echo $active_item4; ?>"><a href="index.php?cart">Корзина </a></li>
                         
                     </ul>
                     
@@ -141,9 +151,9 @@ $active_item = ""; ?>
            
            
        </header>
-_EOD;
-    }
-    
+
+   <?php } ?>
+    <?php
     if(isset($_SESSION['user_group']) && $_SESSION['user_group'] == "1") {
         
             echo <<<_EOD

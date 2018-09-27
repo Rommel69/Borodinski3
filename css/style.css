@@ -16,7 +16,18 @@ body {
     background-color: #292929;
 }
 
+.register-form-top {
+    border: none;
+    display: flex;
+    flex-direction: column;
 
+}
+
+.top-title-reg {
+    display: flex;
+    align-self: center;
+
+}
 
 .user-profile-main {
     width: 320px;
@@ -1156,6 +1167,14 @@ body {
     
     .user-profile-main a {
         display: none;
+    }
+    
+    .top-title-reg {
+        display: flex;
+	align-self: center;
+	justify-content: space-between;
+	width: 640px;
+
     }
     
     .user-profile-wrapper {

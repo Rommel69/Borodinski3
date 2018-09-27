@@ -36,7 +36,7 @@
 }else{
 	$items = $_GET['id'];
 	$_SESSION['cart'] = $items;
-	header('location: ../index.php?status=success');
+	header('location: ../index.php?shop');
 }
         
         

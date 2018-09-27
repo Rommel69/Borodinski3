@@ -45,19 +45,7 @@ if(isset($_REQUEST['Apply_Last_Name']) &&
 
 ?>
 
-<style>
-    .title-top {
-        color: black;
-    }
-    
-    .beard-radio .radio-container  {
-        color: black;
-    }
-    
-    .checkbox-container {
-        color: black;
-    }
-</style>
+
 <main>
             
             <section class="apply-section">
@@ -91,7 +79,7 @@ if(isset($_REQUEST['Apply_Last_Name']) &&
                            class="form-field" name="Apply_Email" required
                            value="<?php echo $email_adress; ?>">
                     </div>
-                    <textarea class="textarea" name="Add_Info" wrap="hard">Доп.информация для мастера.
+                    <textarea class="textarea" name="Add_Info" wrap="hard" cols="10">Доп.информация для мастера.
                     <?php echo $description; ?>
                     </textarea>
                     
@@ -165,16 +153,16 @@ if(isset($_REQUEST['Apply_Last_Name']) &&
                     <div class="form-checkbox-container">
                     <label class="checkbox-container">Подкрасить бороду
                     <input type="checkbox" class="form-checkbox"
-                           name="service-selection">
+                           name="service-selection" value="Подкрасить бороду">
                     <span class="checkmark-checkbox"
-                          value="Подкрасить бороду"></span>
+                          ></span>
                     </label>
                     
                     <label class="checkbox-container">Накрутить усы
                     <input type="checkbox" class="form-checkbox"
-                           name="service-selection">
+                           name="service-selection"  value="Накрутить усы">
                     <span class="checkmark-checkbox"
-                          value="Накрутить усы"></span>
+                         ></span>
                     </label>
                     
                     <label class="checkbox-container">Причесать бороду

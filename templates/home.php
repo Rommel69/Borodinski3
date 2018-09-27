@@ -168,5 +168,6 @@
                <img class="reviews-mock" src="images/reviews-sector-mock.svg"
                     width="320" height="34" alt="rev mock">
            </section>
+         </section>
          
          <?php include_once 'footer.php'; ?>

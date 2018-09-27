@@ -168,7 +168,7 @@ label {
 <main>
     <div class="content-wrapper">
     <aside class="goods-filter">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="?shop" method="post" enctype="multipart/form-data">
                 <fieldset class="checkbox-list">
                    <legend class="filter-title">Производители:</legend>
                    <label><input type="checkbox" name="produced" value="BAXTER OF CALIFORNIA"> Baxter of California</label>
@@ -216,7 +216,7 @@ label {
                         <img src="<?php echo $p_pic; ?>" alt="" width="220" height="165">
                         <b><?php echo $p_name; ?></b>
                         <span><?php echo $p_price ?>.</span>
-                        <a href="scripts/add_to_cart.php?id= <?php echo $p_id; ?>" class="product-buy">Купить</a>
+                        <a href="scripts/add_to_cart.php?id=<?php echo $p_id; ?>" class="product-buy">Купить</a>
                     </li>
                     
                     

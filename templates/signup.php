@@ -1,7 +1,5 @@
 <?php
 
-$title = "Регистрацwия";
-page_name($title);
 include_once 'header.php';
 include_once 'navigation.php';
 
@@ -9,29 +7,14 @@ include_once 'navigation.php';
 
 ?>
 
-<style>
-    .form-field-containerCon {
-	flex-direction: column;
-	width: 960px;
-	justify-content: space-between;
-}
-.submit-button {
-	width: 960px;
-       margin-top: 0; 
-}
 
-.apply-section {
-	width: 960px;
-	height: 942px;
-}
-</style>
 
 <main>
     <section class="apply-section">
         <form action="scripts/create_user.php" method="POST" class="apply-form"
               enctype="multipart/form-data">
-                <fieldset class="form-top">
-                    <div class="top-title-wrap">
+                <fieldset class="register-form-top">
+                    <div class="top-title-reg">
                         <h2 class="register-top">Регистрация</h2>
                     <a href="index.php" class="form-button-toindex">На главную</a>
                     </div>

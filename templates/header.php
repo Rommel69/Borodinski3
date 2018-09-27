@@ -16,9 +16,11 @@ function page_name($title) {
 <html lang="ru">
     <head>
         
-        <title><?php if(isset($_GET['signup'])) echo "Регистрация"; 
-                     if(isset($_GET['shop'])) echo "Магазин";
-                     if(isset($_GET['order'])) echo "Записаться";?></title>
+        <title><?php if(isset($_GET['signup']))  echo "Регистрация"; 
+                     if(isset($_GET['shop']))    echo "Магазин";
+                     if(isset($_GET['order']))   echo "Записаться";
+                     if(isset($_GET['cart']))    echo "Корзина";
+                     if(isset($_GET['home']))    echo "Главная"; ?></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
        
