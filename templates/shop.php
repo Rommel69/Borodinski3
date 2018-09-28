@@ -111,6 +111,9 @@ span {
         padding-right: 10px;
 }
 
+.checkmark {
+    width: 10px;
+}
 .product-item {
     background-color: white;
     padding-left: 10px;
@@ -137,6 +140,10 @@ label {
     color: black;
 }
 
+.content-wrapper {
+    display: flex;
+}
+
 @media (min-width: 768px) {
     main {
         width: auto;
@@ -151,9 +158,15 @@ label {
     .product-item {
         margin-left: 15px;
     }
+    
+    .content-wrapper {
+	display: flex;
+	margin: 0 auto;
+	width: 768px;
+    }
 }
 
-@media (min-width: 960px) {
+@media (min-width: 1200px) {
     main {
         width: auto;
     }

@@ -16,6 +16,61 @@ body {
     background-color: #292929;
 }
 
+
+.main-comments {
+	background-color: #f8f5f2;
+	width: 320px;
+	margin: 0 auto;
+}
+.comments-form {
+        display: flex;
+	flex-direction: column;
+	width: 280px;
+	margin: 0 auto;
+
+}
+
+.comment-button {
+    width: 130px;
+    height: 50px;
+    background-color: #826550;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    width: 280px;
+    text-decoration: none;
+}
+
+.author_con {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.comments-form textarea {
+    border: none;
+}
+
+.comments-title {
+    text-align: center;
+}
+
+.cart-title {
+	text-align: center;
+	color: white;
+}
+
+.cart-main {
+    width: 320px;
+    margin: 0 auto;
+    color: white;
+}
+
+.cart--a {
+    text-decoration: none;
+    color: red;
+    cursor: pointer;
+}
+
 .register-form-top {
     border: none;
     display: flex;
@@ -1165,6 +1220,31 @@ body {
         width: auto;
     }
     
+    .cart-main {
+	background-color: #f8f5f2;
+	width: auto;
+    }
+    
+    .cart-title {
+        margin-top: 0;
+        color: black;
+    }
+    
+    .pure-table-horizontal tr td {
+        background-color: #f8f5f2;
+        color: black;
+    }
+    
+    .pure-table-horizontal {
+        width: 768px;
+        margin: 0 auto;
+    }
+    
+    .button-success {
+        width: 768px;
+        margin-left: 95px;
+    }
+    
     .user-profile-main a {
         display: none;
     }
@@ -2127,37 +2207,10 @@ body {
         left: 465px;
     }
     
-    
+    .button-success {
+        margin-left: 250px;
+    }
 }
 
 
 
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-/*
-@media screen and (max-width: 600px) {
-  .main-nav div:not(:first-child) {display: none;}
-  .main-nav div.icon {
-    float: left;
-    display: block;
-  }
-}
-
- padding-top: 27px;
-    padding-bottom: 27px;
-    padding-right: 20px;
-    padding-left: 20px;
-
-@media screen and (max-width: 600px) {
-  .main-nav.responsive {position: relative;}
-  .main-nav.responsive div.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-    .main-nav.responsive div {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
-*/

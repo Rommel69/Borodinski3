@@ -129,14 +129,14 @@ $name = $_SESSION['user_name'];
                     
                     <ul class="main-nav-list user-list">
                         <li class="user-list-item">
-                            
+                            <a class="list-item-login" href="scripts/logout.php">
                         <svg class="user-list user-list-icon" width="16" height="16"
                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                         <polygon points="0 7 7.01 7 7.01 4.06 10.96 8.01 7.01 11.91 7.01
                         9.06 0 9.02 0 7"/><polygon points="7.01 0 7.01 2 14.03
                         2 14.03 13.99 7.01 13.99 7.01 16 16 16 16 0 7.01 0"/>
                         </svg>
-                        <a href="scripts/logout.php">Выйти</a></button>
+                        Выйти</a>
                
                         </li>
                
@@ -175,13 +175,13 @@ $name = $_SESSION['user_name'];
                     <ul class="main-nav-list user-list">
                         <li class="user-list-item">
                             
-                       <a href="scripts/logout.php"> <svg class="user-list user-list-icon" width="16" height="16"
+                       <a class="list-item-login" href="scripts/logout.php"> <svg class="user-list user-list-icon" width="16" height="16"
                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                         <polygon points="0 7 7.01 7 7.01 4.06 10.96 8.01 7.01 11.91 7.01
                         9.06 0 9.02 0 7"/><polygon points="7.01 0 7.01 2 14.03
                         2 14.03 13.99 7.01 13.99 7.01 16 16 16 16 0 7.01 0"/>
                         </svg>
-                        </a>
+                        Выйти</a>
                
                         </li>
                

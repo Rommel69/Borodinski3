@@ -34,32 +34,13 @@ $items = $_SESSION['cart'];
 $cartitems = explode(",", $items);
 ?>
 
-<style>
-    form {
-        display: flex;
-        flex-direction: column;
-    }
-     main {
-	background-color: #353535;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
 
-input {
-   padding-left: 25px;
-}
 
-a {
-    color: white;
-}
-</style>
-
-<main>
-    <h2>Ваша корзина</h2>
-    <div class="container">
-	<div class="row">
-	  <table class="table">
+<main class="cart-main">
+    <h2 class="cart-title">Ваша корзина</h2>
+    <div class="cart-container">
+	<div class="cart-table">
+	  <table class="pure-table-horizontal">
 	  	<tr>
 	  		<th>Название товара</th>
 	  		<th>Цена</th>
@@ -75,7 +56,7 @@ $i=1;
 ?>	  	
 	<tr>
 		
-            <td><a href="scripts/del_cart.php?remove=<?php echo $key; ?>">Удалить</a> <?php echo $row['name']; ?></td>
+            <td><a href="scripts/del_cart.php?remove=<?php echo $key; ?>" class="cart--a">Удалить</a> <?php echo $row['name']; ?></td>
 		<td><?php echo $row['price']; ?>  руб</td>
 	</tr>
 <?php 
@@ -88,9 +69,10 @@ $i=1;
 <tr>
 	<td><strong>Итого</strong></td>
 	<td><strong><?php echo $total; ?> руб</strong></td>
-	<td><a href="#" class="btn btn-info">Оплатить</a></td>
+	
 </tr>
 	  </table>
+            <input type="submit" name="submit" value="Оплатить" class="button-success pure-button">
 	</div>
 </div>
     
