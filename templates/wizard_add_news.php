@@ -8,9 +8,9 @@ require_once 'scripts/user_actions.php';
 
 if(count($_POST) > 0) {
     
-    $article_id = $_POST['article_id'];
-    $date = $_POST['date'];
-    $text = $_POST['text'];
+    $article_id = $_POST['n_id'];
+    $date = $_POST['n_date'];
+    $text = $_POST['n_text'];
     
     $SQL = "UPDATE news SET date = '{$date}', text = '{$text}' WHERE id = $article_id";
     $result = $connection->query($SQL);
@@ -42,42 +42,38 @@ a {
     <h2>Новости</h2>
     <a href="index.php?wizard">Главное меню</a>
     <a href="index.php?wizard_create_news">Добавить новость</a>
-    <div><?php if(isset($_SESSION['cond_message'])) echo $_SESSION['cond_message']; ?></div>
-    <form name="news" method="POST" action="">
-        <table>
-            <thead>
-            <th>Номер статьи</th>
-            <th>Дата</th>
-            <th>Текст</th>
-            </thead>
-            <?php
-            
-            $sql = "SELECT * FROM news ORDER BY date";
-            
-            $result = $connection->query($sql);
-            
-            if(!$result)die($connection->error);
-            
-            while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-            
-                $article_id     =   $row['id'];
-                $article_date   =   $row['date'];
-                $text           =   $row['text'];
-                
-                
-            ?>
-            <tbody>
-                <tr>
-                    <td><input type="text" name="article_id" value="<?php echo $article_id;?>"></td>
-                    <td><input type="text" name="date" value="<?php echo $article_date;?>"></td>
-                    <td><input type="text" name="text" value="<?php echo $text ;?>"></td>
-                    <td>
-                        <input type="submit" value="Обновить" name="sub_news">
-                        <a href="scripts/delete_news.php?id=<?php echo $article_id; ?>">Удалить</a></td>
-                    <td></td>
-                </tr>
-            </tbody>
-            <?php } ?>
-        </table>
-    </form>
+   <table class="pure-table pure-table-bordered">
+       <thead>
+       <tr>
+       <th>ID</th><th>Дата</th><th>Содержание</th><th>Удалить/Изменить</th>
+       </tr>
+       </thead>
+
+       <?php
+
+       $SQL = "SELECT * FROM news ORDER BY id";
+       $result = $connection->query($SQL);
+       if(!$result){die($connection->error);}
+
+       while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+
+           $n_id    = $row['id'];
+           $n_date  = $row['date'];
+           $n_text  = $row['text'];
+
+       ?>
+
+       <form action="?wizard_add_news" method="post">
+       <tbody>
+       <td><input type="hidden" value="<?php echo $n_id; ?>" name="n_id"><?php echo $n_id; ?></td>
+       <td><input type="text" name="n_date" value="<?php echo $n_date; ?>"></td>
+       <td><textarea name="n_text" cols="25"><?php echo $n_text; ?></textarea> </td>
+       <td><input type="submit" name="submit" value="Изменить">
+       <a href="scripts/delete_news.php?id=<?php echo $n_id;?>">Удалить</a> </td>
+
+       </tbody>
+       </form>
+
+       <?php } ?>
+   </table>
 </main>

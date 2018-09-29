@@ -30,7 +30,7 @@ require_once 'scripts/user_actions.php';
 
 
 if(count($_POST) > 0) {
-    $target_dir = "product_pics/default_product.jpg";
+    $target_dir = "product_pics/default_product.png";
     $target_file =  $target_dir . basename($_FILES["product_image_add"]["name"]);
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     
@@ -46,7 +46,7 @@ if(count($_POST) > 0) {
     $produced_by         = $_POST['produced_by_add'];
     $product_image       = $target_file . $_POST['product_image_add'];
     
-    $price = $price . " руб";
+    
     
     if($in_stock == "В наличии") {
         $in_stock = 1;
@@ -116,6 +116,8 @@ a {
                 <option value="SUAVECITO">SUAVECITO</option>
                 <option value="MR NATTY">MR NATTY</option>
                 <option value="MALIN-GOETZ">MALIN-GOETZ</option>
+                <option value="MURRAYS">MURRAY'S</option>
+                <option value="AMERICAN CREW">AMERICAN CREW</option>
             </select>
         </label>
         <label> Изображение товара:

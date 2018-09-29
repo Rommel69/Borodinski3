@@ -29,7 +29,7 @@ a {
     <nav class="wizard-nav">
         <ul>
             <li><a href="index.php?wizard_users">Редактировать пользователей</a></li>
-            <li><a href="index.php?wizard_products">Просмотреть/Отредактирвоать товар</a></li>
+            <li><a href="index.php?wizard_products">Просмотреть/Отредактировать товар</a></li>
             <li><a href="index.php?wizard_add_product">Добавить товар</a></li>
             <li><a href="index.php?wizard_add_news">Редактировать новости</a></li>
             <li><a href="index.php?wizard_orders">Заказы</a></li>

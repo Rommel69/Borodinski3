@@ -132,7 +132,7 @@ $result = $connection->query($SQL);
                     <td>
                         <input type="submit" value="Изменить" name="submit">
                         <input type="submit" value="Удалить" name="delete">
-                        <a href="scripts/delete_order.php?id=<?php echo $order_id; ?>">Удалить</a></td>
+                        </td>
                     <td></td>
                 </tr>
             </tbody>

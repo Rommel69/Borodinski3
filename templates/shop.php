@@ -189,7 +189,7 @@ label {
                    <label><input type="checkbox" name="produced" value="SUAVECITO"> Suavecito</label>
                    <label><input type="checkbox" name="produced" value="MALIN-GOETZ"> Malin-goetz</label>
                    <label><input type="checkbox" name="produced" value="MURRAYS"> Murray's</label>
-                   <label><input type="checkbox" name="produced" value="AMERICAN-CREW"> American Crew</label>
+                   <label><input type="checkbox" name="produced" value="AMERICAN CREW"> American Crew</label>
                 </fieldset>
                 
                 <fieldset class="goods-group">
@@ -228,7 +228,7 @@ label {
                     <li class="product-item">
                         <img src="<?php echo $p_pic; ?>" alt="" width="220" height="165">
                         <b><?php echo $p_name; ?></b>
-                        <span><?php echo $p_price ?>.</span>
+                        <span><?php echo $p_price . "руб" ?></span>
                         <a href="scripts/add_to_cart.php?id=<?php echo $p_id; ?>" class="product-buy">Купить</a>
                     </li>
                     

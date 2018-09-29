@@ -46,7 +46,7 @@ a {
 }
 </style>
 <main>
-    <h2>Добавить товар</h2>
+    <h2>Добавить Новость</h2>
     <a href="index.php?wizard">Главное Меню</a>
     <a href="index.php?wizard_add_news">Назад</a>
     <div><?php  if(isset($message)) echo $message; ?></div>
