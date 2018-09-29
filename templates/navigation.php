@@ -18,6 +18,8 @@ $name = $_SESSION['user_name'];
       {$active_item5 = "list-site-item-active";}
       if(isset($_GET['user_profile']))
       {$active_item6 = "list-site-item-active";}
+      if(isset($_GET['wizard']))
+      {$active_item7 = "list-site-item-active";}
       else {$active_item = " ";}
     ?>
 
@@ -83,7 +85,7 @@ $name = $_SESSION['user_name'];
                        <input type="checkbox" class="modal-checkbox"
                               name="modal-remember" id="remember">
                        <span class="checkmark"></span> Запомните меня</label>
-                       <a class="f-pass" href="#">Я забыл пароль!</a>
+                       <a class="f-pass" href="index.php?forgot_pass">Я забыл пароль!</a>
                        
                        
                        <input  type="submit" value="Войти" name="submitForm"
@@ -155,20 +157,20 @@ $name = $_SESSION['user_name'];
    <?php } ?>
     <?php
     if(isset($_SESSION['user_group']) && $_SESSION['user_group'] == "1") {
-        
-            echo <<<_EOD
+        ?>
+            
          <nav class="main-nav main-nav-closed main-nav-nojs">
                <button class="main-nav-toggle" type="button">
                    <span class="visually-hidden">Открыть меню</span>
                </button>
                 <div class="main-nav-wrapper">
                     <ul class="main-nav-list site-list">
-                        <li class="list-site-item list-site-item-active"><a>Главная</a></li>
-                        <li class="list-site-item"><a href="index.php?order">Записаться</a></li>
-                        <li class="list-site-item"><a href="index.php?wizard">Управлять     </a></li>
-                        <li class="list-site-item"><a href="index.php?shop">Магазин            </a></li>
-                        <li class="list-site-item"><a href="index.php?user_profile">Профиль</a></li>
-                        <li class="list-site-item"><a href="index.php?cart">Корзина </a></li>
+                        <li class="list-site-item <?php echo $active_item1; ?>"><a href="?home">Главная</a></li>
+                        <li class="list-site-item <?php echo $active_item2; ?>"><a href="index.php?order">Записаться</a></li>
+                        <li class="list-site-item <?php echo $active_item7; ?>"><a href="index.php?wizard">Управлять     </a></li>
+                        <li class="list-site-item <?php echo $active_item5; ?>"><a href="index.php?shop">Магазин            </a></li>
+                        <li class="list-site-item <?php echo $active_item6; ?>"><a href="index.php?user_profile">Профиль</a></li>
+                        <li class="list-site-item <?php echo $active_item4; ?>"><a href="index.php?cart">Корзина </a></li>
                     </ul>
                     
                     
@@ -196,10 +198,10 @@ $name = $_SESSION['user_name'];
            
            
        </header>
-_EOD;
+
         
-    }
-?>
+    <?php } ?>
+
 
 
 

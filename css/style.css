@@ -17,6 +17,7 @@ body {
 }
 
 
+
 .main-comments {
 	background-color: #f8f5f2;
 	width: 320px;
@@ -59,6 +60,29 @@ body {
     margin: 0 auto;
     margin-top: 30px;
     width: 280px;
+}
+
+.forgot-button {
+    height: 50px;
+    background-color: #826550;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    width: 280px;
+    text-decoration: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.forgot-form {
+	display: flex;
+	flex-direction: column;
+	width: 280px;
+	margin: 0 auto;
+}
+
+.forgot-text {
+    margin: 0 auto;
 }
 
 .comment-text {
@@ -877,6 +901,7 @@ body {
     .reviews-mock {
         border-right: 1px solid #343434;
         border-left: 1px solid #343434;
+        display: flex;
     }
     
     .news-mock-desktop, .news-mock-tablet {
@@ -1265,6 +1290,14 @@ body {
     .user-profile-main {
         width: auto;
     }
+    
+    .forgot-form {
+	display: flex;
+	flex-direction: column;
+	width: 640px;
+	margin: 0 auto;
+	align-items: center;
+}
     
     .main-comments {
         width: auto;

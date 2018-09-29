@@ -101,6 +101,11 @@ else if (isset($_GET['add_comment']) && !isset($_SESSION['user_name'])) {
     include_once 'templates/conditions.php';
 }
 
+else if (isset($_GET['forgot_pass']) && !isset($_SESSION['user_name'])) {
+    session_start();
+    include_once 'templates/forgot_pass.php';
+}
+
 else if (isset($_GET['shop'])) {
     include_once './templates/shop.php';
     

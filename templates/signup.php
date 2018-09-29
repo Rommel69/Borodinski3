@@ -4,7 +4,7 @@ include_once 'header.php';
 include_once 'navigation.php';
 
 
-
+$msg = $_SESSION['reg_err_msg'];
 ?>
 
 
@@ -16,6 +16,7 @@ include_once 'navigation.php';
                 <fieldset class="register-form-top">
                     <div class="top-title-reg">
                         <h2 class="register-top">Регистрация</h2>
+                        <p><?php echo $msg;  ?></p>
                     <a href="index.php" class="form-button-toindex">На главную</a>
                     </div>
                     
@@ -48,4 +49,4 @@ include_once 'navigation.php';
 </main>
 
 
-<?php include_once 'footer.php'; ?>
+<?php include_once 'footer.php';unset($_SESSION['reg_err_msg']); ?>

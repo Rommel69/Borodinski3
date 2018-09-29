@@ -66,6 +66,7 @@ if(count($_POST) > 0) {
     form {
         display: flex;
         flex-direction: column;
+        align-items: end;
     }
      main {
 	background-color: #353535;
@@ -91,7 +92,11 @@ a {
             <input type="text" name="name_add"/>
         </label>
         <label> Тип товара:
-            <input type="text" name="type_add" />
+            <select name="type_add">
+                <option value="Средства для ухода">Средства для ухода</option>
+                <option value="Бритвенные принадлежности">Бритвенные принадлежности</option>
+                <option value="Аксессуары">Аксессуары</option>
+            </select>
         </label>
         <label> Цена товара:
             <input type="text" name="price_add"  />
@@ -106,7 +111,12 @@ a {
             <input type="text" name="in_stock_add" />
         </label>
         <label> Имя производителя:
-            <input type="text" name="produced_by_add" />
+            <select name="produced_by_add">
+                <option value="BAXTER OF CALIFORNIA">BAXTER OF CALIFORNIA</option>
+                <option value="SUAVECITO">SUAVECITO</option>
+                <option value="MR NATTY">MR NATTY</option>
+                <option value="MALIN-GOETZ">MALIN-GOETZ</option>
+            </select>
         </label>
         <label> Изображение товара:
             <input type="file" name="product_image_add"  />

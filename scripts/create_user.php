@@ -42,7 +42,8 @@ if(isset($_REQUEST['Apply_Last_Name']) &&
    isset($_REQUEST['Apply_First_Name']) &&
    isset($_REQUEST['Apply_Login']) &&
    isset($_REQUEST['Apply_Email']) &&
-   isset($_REQUEST['Apply_Password'])) {
+   isset($_REQUEST['Apply_Password']) &&
+   isset($_REQUEST['Apply_Repeat'])) {
     
     
     
@@ -52,6 +53,13 @@ if(isset($_REQUEST['Apply_Last_Name']) &&
     $login = sanitizeString($_REQUEST['Apply_Login']);
     $email = sanitizeString($_REQUEST['Apply_Email']);
     $password = sanitizeString($_REQUEST['Apply_Password']);
+    $repeat_password = sanitizeString($_REQUEST['Apply_Repeat']);
+    
+    if($password != $repeat_password) {
+        $_SESSION['reg_err_msg'] = "Пароли не совпадают!";
+        header("Location: ../index.php?signup");
+        exit();
+    }
     
     $sql = "SELECT * FROM users WHERE user_login = '{$login}' OR user_email = '{$email}'";
     
@@ -66,7 +74,7 @@ if(isset($_REQUEST['Apply_Last_Name']) &&
         {
             $_SESSION['msg_error'] = "Пользователь с таким именем или email адрессом уже существует!";
         header("Location: ../index.php?conditions.php");
-        exit();
+        
         
         }
     
@@ -99,7 +107,7 @@ if(isset($_REQUEST['Apply_Last_Name']) &&
     if(!$result && !$result2) {
        $_SESSION['msg_error'] = "Во время регистрации произошла ошибка!" . $connection->error;
         header("Location: ../index.php?conditions.php");
-        exit();
+        
     }
     
     }
