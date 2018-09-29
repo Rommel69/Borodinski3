@@ -90,9 +90,15 @@ else if (isset($_GET['show_all_news'])) {
 
 
 
-else if (isset($_GET['add_comment'])) {
+else if (isset($_GET['add_comment']) && isset($_SESSION['user_name'])) {
     include_once './templates/add_comment.php';
+}
+
+else if (isset($_GET['add_comment']) && !isset($_SESSION['user_name'])) {
+    session_start();
+    $_SESSION['msg_error'] = "Чтобы оставлять комментарии нужно зарегистрироваться!";
     
+    include_once 'templates/conditions.php';
 }
 
 else if (isset($_GET['shop'])) {

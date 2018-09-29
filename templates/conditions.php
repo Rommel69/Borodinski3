@@ -6,8 +6,8 @@ include_once 'navigation.php';
 $message = $_SESSION['msg_error'];
 ?>
 
-<main>
-    <h2><?php echo $message;
+<main class="main-cond">
+    <h2 class="cond-msg"><?php echo $message;
          ?></h2>
 </main>
 

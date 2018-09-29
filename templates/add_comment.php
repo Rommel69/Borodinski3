@@ -64,7 +64,7 @@ if(count($_POST) > 0) {
     <a href="index.php?home" class="coomment-back comment-button">Назад</a>
     <h2 class="comments-title">Отзывы о нас</h2>
     <div class="service_message"><?php echo $message; ?></div>
-    <form action="" method="POST" class="comments-form">
+    <form action="?add_comment" method="POST" class="comments-form">
         
         <textarea name="new_comment" rows="10" cols="45">
             Пишите не стесняйтесь.

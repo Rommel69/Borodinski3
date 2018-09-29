@@ -74,6 +74,6 @@ function showSlidesRev(n) {
     
     
     
-  slides[slideIndexRev-1].style.display = "block";
+  slides[slideIndexRev-1].style.display = "flex";
   dots[slideIndexRev-1].className += " slider-rev-toggle-active";
 } 
