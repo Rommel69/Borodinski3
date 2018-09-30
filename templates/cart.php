@@ -34,7 +34,16 @@ $items = $_SESSION['cart'];
 $cartitems = explode(",", $items);
 ?>
 
+<style>
+    .cart-table {
+        display: flex;
+        flex-direction: column;
+    }
 
+    .comment-button {
+        align-self: center;
+    }
+</style>
 
 <main class="cart-main">
     <h2 class="cart-title">Ваша корзина</h2>
@@ -72,7 +81,7 @@ $i=1;
 	
 </tr>
 	  </table>
-            <input type="submit" name="submit" value="Оплатить" class="button-success pure-button">
+            <input type="submit" name="submit" value="Оплатить" class="comment-button">
 	</div>
 </div>
     

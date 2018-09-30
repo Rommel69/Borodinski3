@@ -35,7 +35,7 @@ if(isset($_REQUEST['Apply_Last_Name']) &&
     if(!$result) die($connection->error);
     
     $message = "Заявка отправлена!";
-    
+    header("HTTP/1.1 301 Moved Permamentrly");
     header("Location: index.php?order");
    }
    
@@ -50,7 +50,7 @@ if(isset($_REQUEST['Apply_Last_Name']) &&
             
             <section class="apply-section">
                 
-                <form action="?order" method="POST" class="apply-form">
+                <form action="scripts/take_order.php" method="POST" class="apply-form">
                 <fieldset class="form-top">
                     <div class="top-title-wrap">
                         <div class="error_msg"><?php echo $message = ''; ?></div>

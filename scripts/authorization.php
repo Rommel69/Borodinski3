@@ -31,12 +31,7 @@ if(isset($_REQUEST['Login']) &&
     
     
     
-//    $sql2 = "SELECT COUNT(*) FROM users u, groups g, user_groups ug
-//            WHERE u.user_login = '{$login}'
-//            AND g.name = 'Administraitors'
-//            AND u.{$user_id} = ug.{$user_id}
-//            AND g.group_id = ug.group_id";
-//    $result2 = $connection->query($sql2);
+
     
     if($token == $row['user_password'] && $login == 'Admin') {
         session_start();
