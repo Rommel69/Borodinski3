@@ -87,7 +87,7 @@ a {
     <h2>Добавить товар</h2>
     <a href="index.php?wizard">Главное Меню</a>
     <div><?php  if(isset($_SESSION['succ_add_product'])) echo $_SESSION['succ_add_product']; ?></div>
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="" method="post" enctype="multipart/form-data" class="pure-form pure-form-aligned">
         <label> Название товара:
             <input type="text" name="name_add"/>
         </label>

@@ -94,16 +94,16 @@ a {
     ?>
     <form action="?wizard_products" method="post" name="p_form">
     <tbody>
-    <td><input type="hidden" name="p_id" value=" <?php echo $p_id; ?>"><?php echo $p_id; ?></td>
-    <td><input type="text" name="p_name" value="<?php echo $p_name; ?>"></td>
-    <td><input type="text" name="p_type" value="<?php echo $p_type; ?>"></td>
-    <td><input type="text" name="p_price" value="<?php echo $p_price; ?>"></td>
+    <td><input type="hidden" name="p_id"    value=" <?php echo $p_id; ?>"><?php echo $p_id; ?></td>
+    <td><input type="text"   name="p_name"  value="<?php echo $p_name; ?>"></td>
+    <td><input type="text"   name="p_type"  value="<?php echo $p_type; ?>"></td>
+    <td><input type="text"   name="p_price" value="<?php echo $p_price; ?>"></td>
     <td><textarea name="p_description"><?php echo $p_description; ?></textarea>
-    </td><td><input type="text" name="p_amount" value="<?php echo $p_amount; ?>"></td>
-    <td><input type="text" name="p_instock" value="<?php if($p_amount > 0) echo "В наличии"; else echo "Нет в наличии"; ?>"></td>
-    <td><input type="text" name="p_made" value="<?php echo $p_made; ?>"></td>
-    <td><input type="text" name="p_image" value="<?php echo $p_image; ?>"><img src="<?php echo $p_name; ?>" alt=" "> </td>
-    <td><input type="submit" name="Update" value="Редактировать">
+    </td><td><input type="text" name="p_amount"  value="<?php echo $p_amount; ?>"></td>
+    <td><input type="text"      name="p_instock" value="<?php if($p_amount > 0) echo "В наличии"; else echo "Нет в наличии"; ?>"></td>
+    <td><input type="text"      name="p_made"    value="<?php echo $p_made; ?>"></td>
+    <td><input type="text"      name="p_image"   value="<?php echo $p_image; ?>"><img src="<?php echo $p_name; ?>" alt=" "> </td>
+    <td><input type="submit"    name="Update"    value="Редактировать">
         <a href="scripts/delete_product.php?id=<?php echo $p_id;?>">Удалить</a> </td>
     </tbody>
     </form>

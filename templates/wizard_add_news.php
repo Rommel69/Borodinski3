@@ -63,7 +63,7 @@ a {
 
        ?>
 
-       <form action="?wizard_add_news" method="post">
+       <form action="?wizard_moder_comments" method="post">
        <tbody>
        <td><input type="hidden" value="<?php echo $n_id; ?>" name="n_id"><?php echo $n_id; ?></td>
        <td><input type="text" name="n_date" value="<?php echo $n_date; ?>"></td>

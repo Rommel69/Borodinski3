@@ -46,9 +46,12 @@ if(count($_GET) > 0) {
 	align-items: center;
 }
 
-table {
-    padding: 10px;
-}
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+
 
 table td {
     padding: 20px;
@@ -60,8 +63,8 @@ table td {
     <h2 align="center">Все пользователи</h2>
     <a href="index.php?wizard">Назад</a>
     <div><?php if(isset($_SESSION['succ_msg'])) echo $_SESSION['succ_msg']; ?></div>
-    <form action="" method="post">
-    <table>
+
+    <table class="pure-table pure-table-bordered">
         <thead>
             
             <tr>
@@ -90,21 +93,24 @@ table td {
      
  
  ?>
-        
+     <form action="?wizard_users" method="post">
+        <tbody>
         <tr>
-            <td><input type="text" name="user_id" value="<?php echo $user_id;        ?>"></td>
-            <td><input type="text" name="user_login" value="<?php echo  $user_login;    ?>"></td>
-            <td><input type="text" name="user_name" value="<?php echo $user_name;      ?>"></td>
-            <td><input type="text" name="user_surname" value="<?php echo $user_surname;   ?>"></td>
-            <td><input type="text" name="user_email" value="<?php echo $user_email;     ?>"></td>
-            <td><img width="100" height="100" src="<?php echo $user_pic;       ?>"></td>
+            <td><input type="text" name="user_id"       value="<?php echo $user_id;                  ?>"></td>
+            <td><input type="text" name="user_login"    value="<?php echo  $user_login;              ?>"></td>
+            <td><input type="text" name="user_name"     value="<?php echo $user_name;                ?>"></td>
+            <td><input type="text" name="user_surname"  value="<?php echo $user_surname;             ?>"></td>
+            <td><input type="text" name="user_email"    value="<?php echo $user_email;               ?>"></td>
+            <td><img width="100" height="100" src="<?php echo $user_pic;                             ?>"></td>
             <td><input type="submit" value="Изменить">
-                <a href="scripts/delete_user.php?user_id=<?php echo $user_id; ?>">удалить</a></td>
+                <a href="scripts/delete_user.php?user_id=<?php echo $user_id; ?>">удалить</a>       </td>
             
         </tr>
+        </tbody>
+     </form>
  <?php } ?>
     </table>
-        </form>
+
 </main>
 
 <!--<td><a href="../scripts/delete_user.php?id=<?php echo $user_id; ?>"><button>Удалить</button></a>

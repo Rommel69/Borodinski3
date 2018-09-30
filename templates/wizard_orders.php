@@ -36,18 +36,19 @@ table {
     <a href="index.php?wizard">Главное меню</a>
     <div><?php if(isset($_SESSION['cond_message'])) echo $_SESSION['cond_message']; ?></div>
     <form name="orders" method="POST" action="">
-        <table>
+        <table class="pure-table pure-table-bordered">
             <thead>
-            <th>Номер Заказа</th>
-            <th>Фамилия:</th>
-            <th>Имя:</th>
-            <th>Отчество:</th>
-            <th>Номер телефона:</th>
-            <th>Email адрес:</th>
-            <th>Доп.Инфо</th>
-            <th>Тип желаемой бороды</th>
-            <th>Дата</th>
-            <th>Доп.Услуга</th>
+            <th>Номер Заказа        </th>
+            <th>Фамилия:            </th>
+            <th>Имя:                </th>
+            <th>Отчество:           </th>
+            <th>Номер телефона:     </th>
+            <th>Email адрес:        </th>
+            <th>Доп.Инфо            </th>
+            <th>Тип желаемой бороды </th>
+            <th>Дата                </th>
+            <th>Доп.Услуга          </th>
+            <th>Удалить             </th>
             
             </thead>
             <?php
@@ -85,7 +86,7 @@ table {
                     <td><input type="text" name="date" value="<?php echo $date;?>"></td>
                     <td><input type="text" name="add_service" value="<?php echo $add_servise;?>"></td>
                     <td><a href="scripts/delete_order.php?id=<?php echo $order_id; ?>">Удалить</a></td>
-                    <td></td>
+
                 </tr>
             </tbody>
             <?php } ?>

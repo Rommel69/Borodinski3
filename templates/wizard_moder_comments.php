@@ -33,19 +33,19 @@ include_once 'navigation.php';
 
 
 
-if(count($_POST) > 0) {
+if(isset($_POST['submit'])) {
     
     $text = sanitizeString($_POST['text']);
     $user_id = $_POST['user_id'];
     $id = $_POST['review_id'];
-    $SQL = "UPDATE user_reviews SET text = '{$text}' WHERE user_id = '{$user_id}' AND id ='{$id}' ";
+    $SQL = "UPDATE user_reviews SET text = '{$text}' WHERE user_id = $user_id AND id =$id ";
     $result = $connection->query($SQL);
     if(!$result)die($connection->error);
     
     $message = "Записаь обновлена!";
 }
 
-if($_POST['delete']) {
+if(isset($_POST['delete'])) {
     
     $review_id = $_POST['review_id'];
     $SQL = "DELETE FROM user_reviews WHERE id = '{$review_id}'";
@@ -55,10 +55,7 @@ if($_POST['delete']) {
 ?>
 
 <style>
-    form {
-        display: flex;
-        flex-direction: column;
-    }
+
      main {
 	background-color: #353535;
 	display: flex;
@@ -79,14 +76,17 @@ a {
     <h2>Отзывы пользователей</h2>
     <a href="index.php?wizard">Главное меню</a>
     <div><?php if(isset($message)) echo $message; ?></div>
-    <form name="orders" method="POST" action="">
-        <table>
+
+        <table class="pure-table pure-table-bordered">
             <thead>
+            <tr>
             <th>Дата</th>
             <th>Имя пользователя</th>
             <th>Фамилия:</th>
             <th>Email</th>
             <th>Текст отзыва</th>
+            <th>Удалить/Изменить</th>
+            </tr>
             </thead>
             <?php
             
@@ -120,23 +120,25 @@ $result = $connection->query($SQL);
                 $user_id        = $row['user_id'];
                 
             ?>
+                <form action="?wizard_moder_comments" method="post">
             <tbody>
                 <tr>
-                    <td><input type="text" name="date" value="<?php echo $date;?>"></td>
-                    <td><input type="text" name="first_name" value="<?php echo $first_name ;?>"></td>
-                    <td><input type="text" name="last_name" value="<?php echo $last_name;?>"></td>
-                    <td><input type="text" name="email" value="<?php echo $email ;?>"></td>
+
+                    <td><?php echo $date;?></td>
+                    <td><?php echo $first_name ;?></td>
+                    <td><?php echo $last_name;?></td>
+                    <td><?php echo $email ;?></td>
                     <td><textarea name="text"><?php echo $review_text; ?></textarea></td>
-                    <td><input type="hidden" name="review_id" value="<?php echo $review_id;?>"></td>
-                    <td><input type="hidden" name="user_id" value="<?php echo $user_id; ?>"></td>
+                   <input type="hidden" name="review_id" value="<?php echo $review_id;?>">
+                   <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                     <td>
                         <input type="submit" value="Изменить" name="submit">
                         <input type="submit" value="Удалить" name="delete">
                         </td>
-                    <td></td>
+
                 </tr>
             </tbody>
+                </form>
             <?php } ?>
         </table>
-    </form>
 </main>
