@@ -1,11 +1,6 @@
 
 <?php include_once 'header.php'; ?>
-<style>
-    article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-	display: block;
-	background-color: #292929;
-}
-</style>
+
 <main>
          <h1 class="visually-hidden">Барбершоп «Бородинский» – истинно мужская классика</h1>
            

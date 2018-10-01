@@ -33,9 +33,6 @@ require_once 'database_connect.php';
 $default_pic_path = "../user_pics/default_userpic.jpg";
 $user_dir_pic = "../user_pics/default_userpic.jpg";
 
-
-
-
     
 
 if(isset($_REQUEST['Apply_Last_Name']) &&

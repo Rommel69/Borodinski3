@@ -18,6 +18,24 @@ body {
 
 
 
+.product-wrap {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* height: 414px; */
+    margin-top: 50px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-left: 15px;
+
+}
+
+.goods-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .main-comments {
 	background-color: #f8f5f2;
 	width: 320px;

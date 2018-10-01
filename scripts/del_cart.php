@@ -29,15 +29,21 @@
 
 
 session_start();
-$items = $_SESSION['cart'];
-$cartitems = explode(",", $items);
-if(isset($_GET['remove']) & !empty($_GET['remove'])){
-	$delitem = $_GET['remove'];
-	unset($cartitems[$delitem]);
-        if($delitem == 0) {
-            unset($cartitems[0]);
+
+
+if(isset($_GET["action"]))
+{
+    if($_GET["action"] == "delete")
+    {
+        foreach($_SESSION["shopping_cart"] as $keys => $values)
+        {
+            if($values["item_id"] == $_GET["id"])
+            {
+                unset($_SESSION["shopping_cart"][$keys]);
+                echo '<script>alert("Item Removed")</script>';
+                echo '<script>window.location="../index.php?cart"</script>';
+
+            }
         }
-	$itemids = implode(",", $cartitems);
-	$_SESSION['cart'] = $itemids;
+    }
 }
-header('location:../index.php?cart');

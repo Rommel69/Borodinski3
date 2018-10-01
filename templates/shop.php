@@ -5,31 +5,6 @@ include_once 'navigation.php';
 
 
 
-/* 
- * Copyright (c) 2018, Predator
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
- *
- * * Redistributions of source code must retain the above copyright notice, this
- *   list of conditions and the following disclaimer.
- * * Redistributions in binary form must reproduce the above copyright notice,
- *   this list of conditions and the following disclaimer in the documentation
- *   and/or other materials provided with the distribution.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
- * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
- * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
- * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
- * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
- * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- */
 
 $SQL = "SELECT * FROM products";
 $result = $connection->query($SQL);
@@ -57,11 +32,27 @@ if ($_POST['produced']) {
     $result = $connection->query($SQL);
     if(!$result)die($connection->error);
 }
-    
 
 
-
+if(isset($_GET["action"]))
+{
+    if($_GET["action"] == "delete")
+    {
+        foreach($_SESSION["shopping_cart"] as $keys => $values)
+        {
+            if($values["item_id"] == $_GET["id"])
+            {
+                unset($_SESSION["shopping_cart"][$keys]);
+                echo '<script>alert("Item Removed")</script>';
+                echo '<script>window.location="index.php"</script>';
+            }
+        }
+    }
+}
 ?>
+
+
+
 
 <style>
     main {
@@ -211,37 +202,34 @@ label {
             
             <div class="container clearfix">
             <section class="goods-container">
-               
-                <ul class="goods-list">
-                  <?php while ($row = $result->fetch_array(MYSQLI_ASSOC)) { 
-    
-    $p_name = $row['name'];
-    $p_pic  = $row['product_image'];
-    $p_price = $row['price'];
-    $p_type  = $row['type'];
-    $p_id    = $row['id'];
-    
-    
-    ?> 
-
-
-                    <li class="product-item">
-                        <img src="<?php echo $p_pic; ?>" alt="" width="220" height="165">
-                        <b><?php echo $p_name; ?></b>
-                        <span><?php echo $p_price . "руб" ?></span>
-                        <a href="scripts/add_to_cart.php?id=<?php echo $p_id; ?>" class="product-buy">Купить</a>
-                    </li>
-                    
-                    
-                    <?php } ?>
-                </ul>
-                
-                <div class="page-number">
-                    <a href="#">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
+<?php
+                $result = mysqli_query($connection, $SQL);
+                if(mysqli_num_rows($result) > 0)
+                {
+                while($row = mysqli_fetch_array($result))
+                {
+                ?>
+                <div class="col-md-4">
+                    <form method="post" action="scripts/add_to_cart.php?action=add&id=<?php echo $row["id"]; ?>">
+                        <div class="product-wrap">
+                            <img src="<?php echo $row["product_image"]; ?>" alt=" " width="250" height="250" class="img-responsive" /><br />
+                            <h4 class="text-info"><?php echo $row["name"]; ?></h4>
+                            <h4 class="text-danger"> <?php echo $row["price"]; ?>РУБ</h4>
+                            <input type="text" name="quantity" class="form-control" value="1" />
+                            <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
+                            <input type="hidden" name="hidden_type" value="<?php echo $row["type"]; ?>" />
+                            <input type="hidden" name="hidden_made" value="<?php echo $row["produced_by"]; ?>" />
+                            <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
+                            <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Добавить в корзину" />
+                        </div>
+                    </form>
                 </div>
+                <?php
+                     }
+                }
+                ?>
+
+
             </section>
             </div>
             </div>

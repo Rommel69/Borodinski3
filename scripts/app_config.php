@@ -68,12 +68,6 @@ function sanitizeString($var) {
     return $var;
 }
 
-function sanitizeMySQL($link, $var) {
-    $var = $link.mysqli_real_escape_string($var);
-    $var.sanitizeString($var);
-    return $var;
-    
-}
 
 
 function createTable($name, $query) {
