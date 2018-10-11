@@ -13,15 +13,17 @@ $result = $connection->query($sql);
 
 <style>
     main {
-	background-color: #353535;
+	background-color: #f8f5f2;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
+    a {
+        color: black;
 
-a {
-    color: white;
-}
+    }
+
+
 </style>
 <main>
     <h2>Добро пожаловать в панель управления сайтом <?php echo $admin_name; ?></h2>

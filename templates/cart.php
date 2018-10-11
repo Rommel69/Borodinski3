@@ -15,20 +15,71 @@ $cartitems = explode(",", $items);
 
     .comment-button {
         align-self: center;
+        width: 320px;
+    }
+
+   tr, td, th {
+       background-color: #f8f5f2;
+   }
+
+    h3 {
+        text-align: center;
+        margin-top: 0;
+    }
+
+
+    a {
+        color: red;
+        text-decoration: none;
+    }
+
+    .cart {
+        list-style: none;
+        padding: 0;
+        width: 280px;
+        margin: 0 auto;
+    }
+    .item-cart {
+        margin-bottom: 15px;
+    }
+
+    .cart-main {
+        width 280px;
+        margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+        .cart {
+            width: 640px;
+        }
+
+
+
+        .item-cart {
+            display: flex;
+            text-align: center;
+
+        }
+        .product-total-bot {
+            display: flex;
+            justify-content: center;
+        }
+
+        .total {
+            padding-right: 20px;
+        }
+
+        .comment-button {
+            width: 640px;
+
+        }
     }
 </style>
 
 <main class="cart-main">
-    <h3>Order Details</h3>
+    <div class="order-title"> <h3>Детали заказа</h3></div>
     <div class="table-responsive">
-        <table class="table table-bordered">
-            <tr>
-                <th width="40%">Название</th>
-                <th width="10%">Количество</th>
-                <th width="20%">Цена</th>
-                <th width="15%">Итого</th>
-                <th width="5%">Действие</th>
-            </tr>
+        <ul class="cart">
             <?php
             if(!empty($_SESSION["shopping_cart"]))
             {
@@ -36,31 +87,37 @@ $cartitems = explode(",", $items);
                 foreach($_SESSION["shopping_cart"] as $keys => $values)
                 {
                     ?>
-                    <tr>
-                        <td><?php echo $values["item_name"]; ?></td>
-                        <td><?php echo $values["item_quantity"]; ?></td>
-                        <td>$ <?php echo $values["item_price"]; ?></td>
-                        <td>$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>
-                        <td><a href="scripts/del_cart.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a></td>
-                    </tr>
+                    <div class="order-wrap">
+                    <li class="item-cart">
+                       <div class="product-name"><?php echo $values["item_name"]; ?></div>
+                       <div class="product-quan">Количество: <?php echo $values["item_quantity"]; ?></div>
+                       <div class="product-price">Стоимость: <?php echo $values["item_price"] . "РУб"; ?></div>
+                       <div class="product-total">Общая стоимость: <?php echo number_format($values["item_quantity"] * $values["item_price"], 2) . "РУб"; ?></div>
+                       <div class="delete-product"><a href="scripts/del_cart.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Удалить</span></a></div>
+
                     <?php
-                    $total = $total + ($values["item_quantity"] * $values["item_price"]);
+                     $total = $total + ($values["item_quantity"] * $values["item_price"]);
                 }
                 ?>
-                <tr>
-                    <td colspan="3" align="right">Total</td>
-                    <td align="right">$ <?php echo number_format($total, 2); ?></td>
-                    <td></td>
-                </tr>
+                </li>
+                           <div class="product-total-bot">
+                    <span class="total">Итого </span>
+                   <?php echo number_format($total, 2) . "РУб"; ?>
+                           </div>
+
+                </div>
+
+
                 <?php
             }
             ?>
-        </table>
-
-
             <input type="submit" name="submit" value="Оплатить" class="comment-button">
+        </ul>
+
+
+
 	</div>
-</div>
+
     
     
     

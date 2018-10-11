@@ -14,15 +14,15 @@ if(isset($_REQUEST['Apply_Last_Name']) &&
    isset($_REQUEST['beard']))  
    {
     
-   $last_name = $_REQUEST['Apply_Last_Name'];
-   $first_name = $_REQUEST['Apply_First_Name'];
-   $middle_name = $_REQUEST['Apply_Midlle_Name'];
-   $email_adress = $_REQUEST['Apply_Email'];
-   $phone = $_REQUEST['mobile'];
-   $beard_type = $_REQUEST['beard'];
-   $description = $_REQUEST['Add_Info'];
+   $last_name = sanitizeString($_REQUEST['Apply_Last_Name']);
+   $first_name = sanitizeString($_REQUEST['Apply_First_Name']);
+   $middle_name = sanitizeString($_REQUEST['Apply_Midlle_Name']);
+   $email_adress = sanitizeString($_REQUEST['Apply_Email']);
+   $phone = sanitizeString($_REQUEST['mobile']);
+   $beard_type = sanitizeString($_REQUEST['beard']);
+   $description = sanitizeString($_REQUEST['Add_Info']);
    $date = date("d M");
-   $add_servise = $_POST['service-selection'];
+   $add_servise = sanitizeString($_POST['service-selection']);
     
     
     $sql = "INSERT INTO bids (last_name, first_name, middle_name, phone, email, "

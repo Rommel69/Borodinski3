@@ -34,21 +34,7 @@ if ($_POST['produced']) {
 }
 
 
-if(isset($_GET["action"]))
-{
-    if($_GET["action"] == "delete")
-    {
-        foreach($_SESSION["shopping_cart"] as $keys => $values)
-        {
-            if($values["item_id"] == $_GET["id"])
-            {
-                unset($_SESSION["shopping_cart"][$keys]);
-                echo '<script>alert("Item Removed")</script>';
-                echo '<script>window.location="index.php"</script>';
-            }
-        }
-    }
-}
+
 ?>
 
 
@@ -133,6 +119,16 @@ label {
 
 .content-wrapper {
     display: flex;
+    flex-direction: column;
+}
+
+.comment-button {
+    width: 320px;
+}
+
+.img-responsive {
+    height: 250px;
+    width: 250px;
 }
 
 @media (min-width: 768px) {
@@ -152,8 +148,17 @@ label {
     
     .content-wrapper {
 	display: flex;
+        flex-direction: row;
 	margin: 0 auto;
 	width: 768px;
+    }
+
+    .goods-container {
+        width; 640px;
+    }
+
+    .comment-button {
+        width: 180px;
     }
 }
 
@@ -165,6 +170,15 @@ label {
         width: 960px;
         margin: 0 auto;
         display: flex;
+    }
+
+    .goods-container {
+        width: 960px;
+
+    }
+
+    .product-wrap {
+        height: 430px;
     }
 }
 </style>
@@ -193,7 +207,7 @@ label {
                     
                     
                 </fieldset>
-                    <input class="left-menu-btn" type="submit" name="show-goods" value="Показать">
+                    <input class="comment-button" type="submit" name="show-goods" value="Показать">
                 </form>
                 
                 
@@ -220,7 +234,7 @@ label {
                             <input type="hidden" name="hidden_type" value="<?php echo $row["type"]; ?>" />
                             <input type="hidden" name="hidden_made" value="<?php echo $row["produced_by"]; ?>" />
                             <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
-                            <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Добавить в корзину" />
+                            <input type="submit" name="add_to_cart" style="margin-top:5px;" class="comment-button" value="Добавить в корзину" />
                         </div>
                     </form>
                 </div>
